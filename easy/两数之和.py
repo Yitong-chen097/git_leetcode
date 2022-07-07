@@ -19,9 +19,29 @@
 输出：[0,1]
 
 提示：
-2 <= nums.length <= 104
--109 <= nums[i] <= 109
--109 <= target <= 109
+2 <= nums.length <= 10**4
+-10**9 <= nums[i] <= 10**9
+-10**9 <= target <= 10**9
 只会存在一个有效答案
 进阶：你可以想出一个时间复杂度小于 O(n2) 的算法吗？
 """
+
+from typing import List
+
+
+def twoSum(nums: List[int], target: int) -> List[int]:
+  # 传统遍历做法
+  # for i in range(len(nums)):
+  #   for j in range(i+1, len(nums)):
+  #     if nums[i] + nums[j] == target:
+  #       return [i, j]
+
+  # 时间复杂度小于 O(n2)
+  for k, v in enumerate(nums):
+    if target-v in nums and k != nums.index(target-v):
+      return [k, nums.index(target-v)]
+
+
+
+if __name__=="__main__":
+  print(twoSum([3,3], 6))

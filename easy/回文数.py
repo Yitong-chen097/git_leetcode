@@ -17,6 +17,36 @@
 输出：false
 解释：从右向左读, 为 01 。因此它不是一个回文数。
 提示：
--231 <= x <= 231 - 1
+-2**31 <= x <= 2**31 - 1
 进阶：你能不将整数转为字符串来解决这个问题吗？
 """
+# def isPalindrome(x:int)->bool:
+#   if x < 0:
+#     return False
+#   else:
+#     length = len(str(x))
+#     for i in range(length):
+#       # 拍脑门方法
+#       if str(x)[i] != str(x)[length - i - 1]:
+#         return False
+#     return True
+
+# def isPalindrome(x:int)->bool:
+#   # 翻转字符串
+#   return str(x)==str(x)[::-1]
+
+def isPalindrome(x:int)->bool:
+  # 数学方法翻转字符串
+  if x < 0:
+    return False
+  else:
+    y = 0
+    item = x
+    while x:
+      y = y * 10 + x % 10 
+      x = x // 10
+    return y == item
+
+
+if __name__=="__main__":
+  print(isPalindrome(1221))
