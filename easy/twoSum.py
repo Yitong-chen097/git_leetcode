@@ -24,6 +24,10 @@
 -10**9 <= target <= 10**9
 只会存在一个有效答案
 进阶：你可以想出一个时间复杂度小于 O(n2) 的算法吗？
+
+来源：力扣（LeetCode）
+链接：https://leetcode.cn/problems/two-sum
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 """
 
 from typing import List
